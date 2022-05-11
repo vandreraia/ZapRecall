@@ -1,0 +1,67 @@
+body {
+    background-color: #FB6B6B;
+}
+
+.home {
+    flex-direction: column;
+    margin: 20vh 10vw;
+}
+
+.home>img {
+    width: 136px;
+}
+
+.logo {
+    font-size: 36px;
+    color: white;
+    font-family: 'Righteous';
+}
+
+.home>button {
+    width: 246px;
+    height: 54px;
+    font-size: 18px;
+    font-family: 'Recursive';
+    color: #D70900;
+    border: 1px solid #D70900;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.content {
+    margin: 40px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header>img {
+    width: 52px;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pergunta {
+    width: 90%;
+    height: 65px;
+    margin-top: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Recursive';
+    padding: 0 15px;
+    justify-content: space-between;
+}
+
+.hide {
+    display: none;
+}
