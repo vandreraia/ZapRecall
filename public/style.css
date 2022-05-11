@@ -1,5 +1,6 @@
 body {
     background-color: #FB6B6B;
+    font-family: 'Recursive';
 }
 
 .home {
@@ -21,7 +22,6 @@ body {
     width: 246px;
     height: 54px;
     font-size: 18px;
-    font-family: 'Recursive';
     color: #D70900;
     border: 1px solid #D70900;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -42,26 +42,73 @@ header>img {
     width: 52px;
 }
 
-.flex-center{
+.flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.pergunta {
+.carta {
     width: 90%;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
+.pergunta {
     height: 65px;
     margin-top: 30px;
     background: #FFFFFF;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
     font-weight: 700;
     font-size: 16px;
-    font-family: 'Recursive';
-    padding: 0 15px;
     justify-content: space-between;
 }
 
+.questao {
+    height: 100px;
+    background: #FFFFD5;
+    padding: 15px;
+}
+
+.questao>img {
+    float: right;
+    position: relative;
+    top: 10px;
+}
+
+.botoes {
+    justify-content: space-evenly;
+}
+
+.botoes>button {
+    width: 30%;
+    height: 38px;
+    margin-top: 30px;
+    font-size: 12px;
+    border-radius: 5px;
+    border-width: 0;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    background-color: white;
+    font-size: 18px;
+}
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: #FF922E;
+}
+
+.green {
+    background-color: #2FBE34;
+}
 .hide {
     display: none;
 }
