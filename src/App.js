@@ -1,13 +1,12 @@
+import React from "react"
 import Home from "./Components/Home";
 import Content from "./Components/Content";
-import Footer from "./Components/Footer";
 
 export default function App() {
+    const [init, setInit] = React.useState(false)
     return (
         <div>
-            <Home />
-            <Content />
-            <Footer />
+            {init ? <Home  setInit={setInit}/> : <Content />}
         </div>
     );
 }

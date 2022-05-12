@@ -1,35 +1,49 @@
-import React from "react"
+
+import Footer from "./Footer";
+import Cards from "./Cards";
 
 export default function Content() {
-    const [hidePergunta, setHidePergunta] = React.useState(false)
-    const [hideQuestion, setHideQuestion] = React.useState(false)
-    const [hideAnswer, setHideAnswer] = React.useState(false)
-    function showQuestion() {
-        setHidePergunta("false")
+    const cards = [{
+        question: "O que é JSX?",
+        answer: "Uma extensão de linguagem do JavaScript"
+    }, {
+        question: "O React é __",
+        answer: "uma biblioteca JavaScript para construção de interfaces"
+    }, {
+        question: "Componentes devem iniciar com __",
+        answer: "letra maiúscula"
+    }, {
+        question: "Podemos colocar __ dentro do JSX",
+        answer: "expressões"
+    }, {
+        question: "O ReactDOM nos ajuda __",
+        answer: "interagindo com a DOM para colocar componentes React na mesma"
+    }, {
+        question: "Usamos o npm para __",
+        answer: "gerenciar os pacotes necessários e suas dependências"
+    }, {
+        question: "Usamos props para __",
+        answer: "passar diferentes informações para componentes"
+    }, {
+        question: "Usamos estado (state) para __",
+        answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
+    }];
+
+    function comparador() {
+        return Math.random() - 0.5;
     }
+
+    cards.sort(comparador);
     return (
-        <div className="content">
-            <header>
-                <img src="./images/logo-pequeno.png" alt="logo" />
-                <h2 className="logo">ZapRecall</h2>
-            </header>
-            <div onClick={() => setHidePergunta(!hidePergunta)} className={hidePergunta ? "hide" : "carta pergunta flex-center"}>
-                Pergunta x
-                <ion-icon size="large" name="play-outline"></ion-icon>
+        <>
+            <div className="content">
+                <header>
+                    <img src="./images/logo-pequeno.png" alt="logo" />
+                    <h2 className="logo">ZapRecall</h2>
+                </header>
+                {cards.map((card, index) => <Cards index={index} question={card.question} answer={card.answer}/>)}
             </div>
-            <div className="carta questao">
-                O que é JSX?
-                <img src="./images/setinha.png" alt="virar"/>
-            </div>
-            <div className="carta questao">
-                JSX é uma sintaxe para
-                escrever HTML dentro do JS
-                <div className="botoes flex-center">
-                    <button className="red">Não lembrei</button>
-                    <button className="orange">Quase não lembrei</button>
-                    <button className="green">Zap!</button>
-                </div>
-            </div>
-        </div>
+            <Footer />
+        </>
     )
 }

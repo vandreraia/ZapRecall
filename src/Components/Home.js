@@ -1,13 +1,11 @@
-import React from "react"
 
-export default function Home() {
-    const [hide, setHide] = React.useState(false)
+export default function Home({setInit}) {
 
     return (
-        <div className={hide ? "hide" : "home flex-center hide"}>
+        <div className="home flex-center">
             <img src="./images/logo.png" alt="logo"/>
             <h1 className="logo">ZapRecall</h1>
-            <button onClick={() => setHide(!hide)}>Iniciar Recall!</button>
+            <button onClick={() => setInit(false)}>Iniciar Recall!</button>
         </div>
     )
 }
