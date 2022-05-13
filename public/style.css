@@ -29,6 +29,15 @@ body {
     border-radius: 5px;
 }
 
+.home>input {
+
+    width: 246px;
+    height: 43px;
+    margin: 10px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
 .content {
     margin: 40px;
 }
@@ -104,6 +113,7 @@ footer {
 .downscale {
     height: 50px;
 }
+
 footer>span {
     margin: 10px;
 }

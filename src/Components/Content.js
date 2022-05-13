@@ -2,9 +2,12 @@
 import Footer from "./Footer";
 import Cards from "./Cards";
 import React from "react"
+import Home from "./Home";
 
 export default function Content() {
+    const [init, setInit] = React.useState(true)
     const [complete, setComplete] = React.useState(0)
+    const [meta, setMeta] = React.useState(0)
     const [icon, setIcon] = React.useState([])
     let cards = [{
         question: "O que é JSX?",
@@ -37,17 +40,22 @@ export default function Content() {
     }
 
     cards.sort(comparador);
-    cards = cards.slice(6)
+    cards = cards.slice()
     return (
         <>
-            <div className="content">
-                <header>
-                    <img src="./images/logo-pequeno.png" alt="logo" />
-                    <h2 className="logo">ZapRecall</h2>
-                </header>
-                {cards.map((card, index) => <Cards index={index} key={index} question={card.question} answer={card.answer} setComplete={setComplete} complete={complete} setIcon={setIcon} icon={icon}/>)}
-            </div>
-            <Footer setComplete={setComplete} complete={complete} size={cards.length} setIcon={setIcon}icon={icon}/>
+            {
+                init ? <Home setInit={setInit} setMeta={setMeta} /> :
+                    <>
+                        <div className="content">
+                            <header>
+                                <img src="./images/logo-pequeno.png" alt="logo" />
+                                <h2 className="logo">ZapRecall</h2>
+                            </header>
+                            {cards.map((card, index) => <Cards index={index} key={index} question={card.question} answer={card.answer} setComplete={setComplete} complete={complete} setIcon={setIcon} icon={icon} />)}
+                        </div>
+                        <Footer setComplete={setComplete} complete={complete} size={cards.length} setIcon={setIcon} icon={icon} meta={meta} setInit={setInit}/>
+                    </>
+            }
         </>
     )
 }
