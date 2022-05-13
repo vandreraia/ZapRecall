@@ -95,10 +95,42 @@ footer {
     width: 100%;
     bottom: 0;
     left: 0;
-    height: 70px;
     background-color: white;
     font-size: 18px;
+    flex-direction: column;
+    padding: 10px;
 }
+
+.downscale {
+    height: 50px;
+}
+footer>span {
+    margin: 10px;
+}
+
+footer>button {
+    width: 167px;
+    height: 32px;
+    background: #FB6B6B;
+    border-radius: 5px;
+    border-width: 0;
+}
+
+.success {
+    text-decoration-line: line-through;
+    color: #2FBE34;
+}
+
+.almost {
+    text-decoration-line: line-through;
+    color: #FF922E;
+}
+
+.fail {
+    text-decoration-line: line-through;
+    color: #FF3030;
+}
+
 .red {
     background-color: red;
 }
@@ -110,6 +142,7 @@ footer {
 .green {
     background-color: #2FBE34;
 }
+
 .hide {
     display: none;
 }

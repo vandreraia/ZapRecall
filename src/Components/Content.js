@@ -1,9 +1,12 @@
 
 import Footer from "./Footer";
 import Cards from "./Cards";
+import React from "react"
 
 export default function Content() {
-    const cards = [{
+    const [complete, setComplete] = React.useState(0)
+    const [icon, setIcon] = React.useState([])
+    let cards = [{
         question: "O que é JSX?",
         answer: "Uma extensão de linguagem do JavaScript"
     }, {
@@ -34,6 +37,7 @@ export default function Content() {
     }
 
     cards.sort(comparador);
+    cards = cards.slice(6)
     return (
         <>
             <div className="content">
@@ -41,9 +45,9 @@ export default function Content() {
                     <img src="./images/logo-pequeno.png" alt="logo" />
                     <h2 className="logo">ZapRecall</h2>
                 </header>
-                {cards.map((card, index) => <Cards index={index} question={card.question} answer={card.answer}/>)}
+                {cards.map((card, index) => <Cards index={index} key={index} question={card.question} answer={card.answer} setComplete={setComplete} complete={complete} setIcon={setIcon} icon={icon}/>)}
             </div>
-            <Footer />
+            <Footer setComplete={setComplete} complete={complete} size={cards.length} setIcon={setIcon}icon={icon}/>
         </>
     )
 }
