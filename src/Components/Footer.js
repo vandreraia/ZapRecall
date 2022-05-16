@@ -3,7 +3,7 @@ export default function Footer({ complete, size, icon,setComplete, setIcon, meta
 
     function renderResults() {
         if (complete === size) {
-            if ((icon.filter(element => element === "success").length) >= meta) {
+            if (((icon.filter(element => element === "success").length) >= meta) || (icon.filter(element => element === "success").length === complete)) {
                 return (
                     <>
                         <b>Parabéns!</b>
